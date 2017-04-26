@@ -13,43 +13,80 @@
 \setboolean{coloredheadlines}{false}
 \DeclareOption{coloredheadlines}{\setboolean{coloredheadlines}{true}}
 
+\newboolean{twoside}
+\setboolean{twoside}{false}
+\DeclareOption{twoside}{\setboolean{twoside}{true}}
+
 \ProcessOptions \relax
 
 
 \ifthenelse{\boolean{german}}{
-    \LoadClass[
-        ngerman,
-        a4paper,
-        %twoside, % two pages
-        %openright,
-        %cleardoublepage=plain,
-        headsepline,
-        footsepline,
-        chapterprefix, % Chapter X
-        numbers=noenddot,
-        12pt,
-        fleqn,
-        bibliography=totoc, % add bibliography to table of contents
-        listof=totoc % add all other lists to toc
-    ]{scrreprt}
+    \ifthenelse{\boolean{twoside}}{
+        \LoadClass[
+            ngerman,
+            a4paper,
+            twoside, % two pages
+            openright,
+            cleardoublepage=plain,
+            headsepline,
+            footsepline,
+            chapterprefix, % Chapter X
+            numbers=noenddot,
+            12pt,
+            fleqn,
+            bibliography=totoc, % add bibliography to table of contents
+            listof=totoc % add all other lists to toc
+        ]{scrreprt}
+    }{
+        \LoadClass[
+            ngerman,
+            a4paper,
+            headsepline,
+            footsepline,
+            chapterprefix, % Chapter X
+            numbers=noenddot,
+            12pt,
+            fleqn,
+            bibliography=totoc, % add bibliography to table of contents
+            listof=totoc % add all other lists to toc
+        ]{scrreprt}
+    }
     \RequirePackage[ngerman]{babel}
     \RequirePackage{csquotes} % for german quotes
 }{
-    \LoadClass[
-        english,
-        a4paper,
-        %twoside, % two pages
-        %openright,
-        %cleardoublepage=plain,
-        headsepline,
-        footsepline,
-        chapterprefix, % Chapter X
-        numbers=noenddot,
-        12pt,
-        fleqn,
-        bibliography=totoc, % add bibliography to table of contents
-        listof=totoc % add all other lists to toc
-    ]{scrreprt}
+    \ifthenelse{\boolean{twoside}}{
+        \LoadClass[
+            english,
+            a4paper,
+            twoside, % two pages
+            openright,
+            cleardoublepage=plain,
+            headsepline,
+            footsepline,
+            chapterprefix, % Chapter X
+            numbers=noenddot,
+            12pt,
+            fleqn,
+            bibliography=totoc, % add bibliography to table of contents
+            listof=totoc % add all other lists to toc
+        ]{scrreprt}
+    }{
+        \LoadClass[
+            english,
+            a4paper,
+            %twoside, % two pages
+            %openright,
+            %cleardoublepage=plain,
+            headsepline,
+            footsepline,
+            chapterprefix, % Chapter X
+            numbers=noenddot,
+            12pt,
+            fleqn,
+            bibliography=totoc, % add bibliography to table of contents
+            listof=totoc % add all other lists to toc
+        ]{scrreprt}
+    }
     \RequirePackage[english]{babel}
     \RequirePackage{csquotes} % for german quotes
 }
@@ -274,6 +311,7 @@
         \\[10em]
         \thelocatin, \today
     }
+    \pagenumbering{gobble}
 \end{titlepage}
 }
 
@@ -315,7 +353,6 @@
 
 
 \newcommand{\declaration}{
-
     \thispagestyle{empty}
     \pagenumbering{gobble}
     \ifthenelse{\boolean{german}}{
@@ -327,14 +364,10 @@
         I declare that the work is entirely my own and was produced with no assistance from third parties.\\
         I certify that the work has not been submitted in the same or any similar form for assessment to any other examining body and all references, direct and indirect, are indicated as such and have been cited accordingly.
     }
-
     \vspace{3cm}
-
     \thelocatin,
     \newline
-
     \rule[-0.2cm]{5cm}{0.5pt}
-
     \textsc{\author}
 }
 
