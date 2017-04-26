@@ -1,0 +1,10 @@
+*.bbl
+*.run.xml
+*.tdo
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
