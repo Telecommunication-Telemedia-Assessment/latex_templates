@@ -22,7 +22,7 @@ You should install some latex-GUI, e.g. [Texmaker](http://www.xm1math.net/texmak
 
 TODOS
 -----
-* add thesis template
+* add missing files
 * add research seminar template
 
 
