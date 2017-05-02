@@ -1,0 +1,102 @@
+\documentclass{expose} % for english version
+% \documentclass[german]{expose} % for german version
+
+% general; update to concrete title and author
+\title{Expose Template and Structure}
+\author{James T. Kirk}
+\date{\today}
+% uncomment the suitable thesis name
+\thesistype{bachelor thesis}
+%\thesistype{master thesis}
+%\thesistype{Bachelorarbeit}
+%\thesistype{Masterarbeit}
+
+\advisors{Alexander Raake, Steve Göring}
+
+
+\addbibresource{references.bib}
+\begin{document}
+% create the title
+\maketitle
+
+%
+\section{Introduction}
+ (max 1 page)
+\begin{itemize}
+    \item general problem space
+    \item e.g. using an example for short introduction
+    \item which concrete topic is in focus
+\end{itemize}
+
+\section{Motivation and Goals}
+ (max 0.75 page)
+\begin{itemize}
+    \item describe topic and goals in detail
+    \item what are possible sub-problems
+\end{itemize}
+
+\section{First Ideas and possbile Approaches}
+ (max 0.75 page)
+
+\begin{itemize}
+    \item describe some ideas for solving the problem and
+    \item explain some general approaches to solve the thesis
+\end{itemize}
+
+\section{Timeplan}
+\begin{itemize}
+    \item a short timeplan for the thesis
+    \item define some 'milestones'
+\end{itemize}
+
+\section{Example Template Usage}
+You can cite something with~\cite{Berlin}.
+Or \citeauthor{raake2014quality} for Authors~\cite{raake2014quality}.
+
+Include Equations using:
+\[ e = m \cdot c^2 \]
+
+Or inline $x=42$.
+
+\begin{figure}[tbh!]
+\centering
+%\includegraphics[width=\textwidth]{path-to-figure}
+\missingfigure{missing figure}
+\caption{Caption of a figure, }
+\label{pic::example1}
+\end{figure}
+Figures can be included, see Fig~\ref{pic::example1}.
+
+
+\begin{table}[h]
+\centering
+\caption{Caption of a Table}
+\label{tbl::example1}
+\begin{tabular}{lr}
+\toprule
+\textbf{XY}  & \textbf{XY} \\
+\midrule
+1   & 2 \\
+\midrule
+3 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For tables see Tables~\ref{tbl::example1}.
+
+Todo markers: \todo{here}
+or \todoI{inline}
+
+\R{red text}
+
+\note{small note}
+
+\printbibliography
+
+\clearpage
+
+% remove in final version
+\listoftodos{Todos}
+
+\end{document}
