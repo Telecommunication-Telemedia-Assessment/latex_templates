@@ -8,3 +8,7 @@
 *.fls
 *.log
 *.out
+*.lof
+*.lot
+*.pdf
+*.toc
