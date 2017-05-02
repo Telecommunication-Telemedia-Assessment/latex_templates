@@ -1,0 +1,83 @@
+\documentclass{thesis} % general english thesis
+%\documentclass[twoside]{thesis} % for two pages layout
+%\documentclass{thesis} % for english version
+%\documentclass[coloredheadlines]{thesis} % for colored headlines
+%\documentclass[german]{thesis} % for german version
+
+
+\author{James T. Kirk}
+\course{Media Technology}
+%\course{Medientechnologie}
+
+\title{A guide to the thesis template}
+\thesistype{bachelor thesis}
+%\thesistype{master thesis}
+%\thesistype{Bachelorarbeit}
+%\thesistype{Masterarbeit}
+
+\professor{Prof. Dr.-Ing. Alexander Raake}
+\advisor{M.Sc. Steve Göring}
+
+
+% submission date
+% \year=2013
+% \month=12
+% \day=2
+
+% literatur
+\addbibresource{bibs/literatur.bib}
+
+\begin{document}
+
+    \maketitle
+
+    % add optional acknowledgments
+    \acknowledgments{
+        \note{optional}
+    }
+    \cleardoublepage
+
+    \pagenumbering{roman}
+
+    \bothabstracts{
+        % german abstract
+        \last{maximum of 2400 chars; one paragraph}
+        % general problem space and why it is important
+        % describe the approach taken in the paper to address the problem
+        % brief description of the methodology, including some notion of scale
+        % few important sentences describing the key findings
+        % nice to conclude with a sentence about why the findings are important or how they can be used}
+    }{
+        % english abstract
+        \last{maximum of 2400 chars; one paragraph}
+        % see german version
+    }
+
+    \cleardoublepage
+    {\small
+    \tableofcontents
+    \cleardoublepage
+    }
+    \pagenumbering{arabic}
+
+    % include content
+    \include{content/00_exampleUsage}
+
+
+    % include lists, figures, biblio, tables
+    \clearpage
+    \sloppy
+    \printbibliography
+    \listoffigures
+    \listoftables
+
+    % add declaration
+    \declaration
+
+    % remove list of todos in final version
+    \listoftodos
+
+\end{document}
+
+
+

@@ -132,7 +132,7 @@
 \RequirePackage{pgfplots}
 
 \RequirePackage{booktabs}
-
+\RequirePackage{algorithm2e}
 
 \RequirePackage[colorinlistoftodos]{todonotes} % todonotes
 
