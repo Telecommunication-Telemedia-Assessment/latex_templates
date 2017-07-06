@@ -136,8 +136,8 @@
 
 \RequirePackage[colorinlistoftodos]{todonotes} % todonotes
 
-%\RequirePackage{caption}
-%\RequirePackage{subcaption}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
 
 
 % color definitions
@@ -251,10 +251,10 @@
     numbers=right,
     xrightmargin=2em,
     breaklines=true,
-    %breakatwhitespace=true,
+    breakatwhitespace=true,
     prebreak=\mbox{\tiny$\searrow$},
         postbreak=\mbox{{\color{blue}\tiny$\rightarrow$}},
-    %numberbychapter=false,
+    numberbychapter=false,
 }
 
 
