@@ -1,0 +1,259 @@
+\chapter{Introduction}
+%\chapter{Einleitung}
+\label{sec:introduction}
+
+general motivation for your work, context and goals: 1-2 pages
+
+\begin{itemize}
+    \item \textbf{Context:} make sure to link where your work fits in
+    \item \textbf{Problem:} gap in knowledge, too expensive, too slow, a deficiency, superseded technology
+    \item \textbf{Strategy:} the way you will address the problem
+\end{itemize}
+
+
+\section{Sample Section}
+
+The following samples explain how to insert references, figures and tables, how to set math, algorithms and program code.
+
+
+\subsection{Figures}
+
+Figure~\ref{fig:ex1} shows something.
+
+\begin{figure}
+    \centering
+    \missingfigure{missing figure}
+    \caption{Example Figure}
+    \label{fig:ex1}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+        \begin{tikzpicture}
+            \tikzstyle{every entity}=[fill=blue!20,draw=blue,thick]
+            \tikzstyle{every relationship}=[fill=orange!20,draw=orange,thick,aspect=1.5]
+
+            \node[entity] (sheep) at (0,0) {Sheep};
+            \node[entity] (genome) at (4,0) {Genome};
+            \node[relationship] at (2,1.5) {has}
+                edge (sheep)
+                edge (genome);
+            \draw[->] (sheep) -- (genome);
+        \end{tikzpicture}
+    \end{center}
+    \label{fig:ex2}
+    \caption{Tikz Example}
+\end{figure}
+You can also use tikz for your figures, see Figure~\ref{fig:ex2}.
+However other tools, like \url{https://www.yworks.com/products/yed} are more suitable.
+
+\subsection{Tables}
+
+Short tables, e.g., Table~\ref{tab:shorttable} are straighforward to define.
+
+\begin{table}
+    \centering
+    \begin{tabular}{llr}
+        \toprule
+        left aligned & same here & right aligned \\
+        \midrule
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Short table}
+    \label{tab:shorttable}
+\end{table}
+
+Multi-line cells can be set as shown in Table~\ref{tab:SensorNetworkApplications}.
+
+\begin{table}
+    \centering
+    \begin{tabular}{>{\raggedright}p{1.8cm}p{5.4cm}p{3.4cm}}
+        \toprule
+        Class & application examples & lifetime aspects \\
+        \midrule
+        Critical, coverage &
+                Forest fire detection, flood detection, nuclear/chemical/biological attack detection, battlefield surveillance, intrusion detection &
+                $c_{ca}$/$c_{ct}$/$c_{cb}$, $c_{ln}$, $c_{la}$, $c_{lo}$\\
+        Critical, no coverage &
+                Monitoring human physiological data, military monitoring of friendly forces, machine monitoring &
+                $c_{cc}$, $c_{ln}$, $c_{la}$, $c_{lo}$ \\
+        Noncritical, coverage &
+                Agriculture, smart buildings, habitat monitoring (sensors monitor the inhabitants in a region) &
+                $c_{ac}$/$c_{tc}$/$c_{bc}$, $c_{cc}$, $c_{sd}$ \\
+        Noncritical, no coverage &
+                Home automation, habitat monitoring (sensors are attached to animals and monitor their health and social contacts) &
+                $c_{cc}$, $c_{sd}$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Sensor network applications}
+    \label{tab:SensorNetworkApplications}
+\end{table}
+
+
+\subsection{Math}
+
+Simple inlined equations: $\zeta(t) = \min( \zeta_{**}(t))$.
+The same in a numbered equation, i.e.\ Eq.~\ref{eq:zeta}, which states
+\begin{equation}
+\zeta(t) =
+    \min\left(
+        \zeta_{**}(t)
+    \right)
+\label{eq:zeta}
+.
+\end{equation}
+
+\begin{equation}
+    e = m \cdot c^2
+    \label{eq:ex1}
+\end{equation}
+
+
+\[ v = \frac{s}{t} \]
+
+\begin{equation}
+    \ln(e) + \sin^2(p) + \cos^2 (p) = \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^n
+    \label{eq:ex2}
+\end{equation}
+
+
+Equations covering multiple lines should be aligned. Note that the numbering is added automatically, independent of whether the equation is actually referenced or not, as in
+\begin{align}
+sd_{max} &=
+    \max\left(
+        (t_{i+1} - t_i)
+            : \zeta(t_i) < 1, i \in [0, |T|-1]
+    \right)
+,\\
+\psi_{sd}(t) &=
+    \begin{cases}
+        \dfrac{\Delta t_{sd}}{sd_{max}}
+            & \text{if $sd_{max} > 0$}, \\
+        1
+            & \text{if $sd_{max} = 0$},
+    \end{cases}
+\\
+\zeta_{sd}(t) &=
+    \frac{
+        \psi_{sd} - cl_{sd}
+    }{
+        c_{sd} - cl_{sd}
+    }
+.
+\end{align}
+
+
+\subsection{Algorithms}
+Algorithm~\ref{algo:test} is an example algorithm.
+
+\begin{algorithm}[H]
+    \KwData{this text}
+    \KwResult{how to write algorithm with \LaTeX2e }
+    initialization\;
+    \While{not at end of this document}{
+        read current\;
+        \eIf{understand}{
+            go to next section\;
+            current section becomes this one\;
+        }{
+            go back to the beginning of current section\;
+        }
+    }
+    \caption{How to write algorithms}
+    \label{algo:test}
+\end{algorithm}
+
+\subsection{Program Code}
+
+Program code should be omitted, but if absolutely necessary, it should be set as seen in Listing~\ref{lst:code}.
+
+\begin{lstlisting}[caption=Sample application,label=lst:code]{}
+#include <iostream>
+int main() {
+    std::cout << "Hello world" << std::endl;
+    return 0;
+}
+
+\end{lstlisting}
+
+
+\subsection{References}
+
+You can cite something with~\cite{Berlin}.
+Or~\citeauthor{raake2014quality} for Authors~\cite{raake2014quality}.
+Or~\cite{coresparql}. Or \cite[p 1]{sparqlAlgebra}
+
+For bibtex entries you can use different sources, e.g.,
+\begin{itemize}
+    \item \url{http://scholar.google.de/}
+    \item \url{http://books.google.de}
+    \item \url{http://citeseerx.ist.psu.edu}
+    \item \url{http://ieeexplore.ieee.org/}
+    \item \url{http://dblp.uni-trier.de/}
+\end{itemize}
+
+\subsection{TODOs and FIXMEs}
+
+You can use the the \verb|\todoI| command to add short ``sticky notes'' to your document.
+\todoI{This is what a TODO looks like}
+This will also trigger generation of a list-of-TODOs at the end of the document.
+The same goes for the \verb|\note|\note{This is what a NOTE looks like} command.
+
+
+
+
+\chapter{Fundamentals}
+\label{sec:fundamentals}
+
+Fundamentals / environment and related work: 1/3
+
+\begin{itemize}
+    \item comment on employed hardware and software
+    \item describe methods and techniques that build the basis of your work
+    \item review related work(!)
+\end{itemize}
+
+\chapter{Architecture/Implementation}
+
+Developed architecture / system design / implementation: 1/3
+
+\begin{itemize}
+    \item start with a theoretical approach
+    \item describe the developed system/algorithm/method from a high-level point of view
+    \item go ahead in presenting your developments in more detail
+\end{itemize}
+
+
+\chapter{Analysis/ Evaluation}
+
+Measurement results / analysis / discussion: 1/3
+
+\begin{itemize}
+    \item whatever you have done, you must comment it, compare it to other systems, evaluate it, using e.g. subjective tests
+    \item usually, adequate graphs help to show the benefits of your approach
+    \item caution: each result/graph must be discussed! what's the reason for this peak or why have you ovserved this effect
+\end{itemize}
+
+
+\chapter{Conclusion}
+
+Conclusion: 1 page
+
+\begin{itemize}
+    \item summarize again what your thesis did, but now emphasize more the results, and comparisons
+    \item write conclusions that can be drawn from the results found and the discussion presented in the paper
+    \item future work (be very brief, explain what, but not much how)
+\end{itemize}
+
+
+\begin{leftbar}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{leftbar}
