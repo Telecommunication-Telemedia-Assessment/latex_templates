@@ -300,8 +300,13 @@
 \RequirePackage[all]{nowidow}
 
 \newcommand{\thesistype}[1]{\gdef\thethesistype{#1}}
-\newcommand{\professor}[1]{\gdef\theprofessor{#1}}
-\newcommand{\advisor}[1]{\gdef\theadvisor{#1}}
+\newcommand{\thesisfor}[1]{\gdef\thethesisfor{#1}}
+\newcommand{\authorbirthday}[1]{\gdef\theauthorbirthday{#1}}
+
+
+\newcommand{\profOne}[1]{\gdef\theprofOne{#1}}
+\newcommand{\profTwo}[1]{\gdef\theprofTwo{#1}}
+\newcommand{\supervisor}[1]{\gdef\thesupervisor{#1}}
 \newcommand{\chair}[1]{\gdef\thechair{#1}}
 \newcommand{\course}[1]{\gdef\thecourse{#1}}
 \newcommand{\faculty}[1]{\gdef\thefaculty{#1}}
@@ -318,34 +323,37 @@
         % general
         \thefaculty \\
         \theinstitut \\
-        \thechair \\[8em]
+        \thechair \\[5em]
     \end{center}
     \centering
     % topic
-    {\LARGE \textsc \thethesistype} \\[1cm]
+    {\LARGE \textsc \thethesistype}\\[1em]
+    {\large \thethesisfor} \\[1.5cm]
 
-    \parbox{\textwidth}{\centering \LARGE \textbf \@title } \\[2cm]
+    \parbox{\textwidth}{\centering \LARGE \textbf \@title } \\[1.5cm]
 
     % author info
     \ifthenelse{\boolean{german}}{
         \begin{tabular}{rl}
             \hline \\
-            vorgelegt von:               & \@author \\[0.5em]
-            Studiengang:                 & \thecourse \\[0.5em]
-            Verantwortlicher Professor:  & \theprofessor \\
-            Wissenschaftlicher Betreuer: & \theadvisor \\
+            vorgelegt von:               & \@author \\
+            geboren am:                  & \theauthorbirthday \\[0.5em]
+            Betreuender Gutachter:       & \thesupervisor \\[0.5em]
+            Gutachter:  & \theprofOne \\
+            Gutachter: & \theprofTwo \\
         \end{tabular}
-        \\[10em]
+        \\[6em]
         \thelocatin, den \today
     }{
         \begin{tabular}{rl}
             \hline \\
-            Submitted by:                & \@author \\[0.5em]
-            Major:                       & \thecourse \\[0.5em]
-            Advisor:                     & \theprofessor \\
-            Co-Advisor:                  & \theadvisor \\
+            vorgelegt von:               & \@author \\
+            geboren am:                  & \theauthorbirthday \\[0.5em]
+            Betreuender Gutachter:       & \thesupervisor \\[0.5em]
+            Gutachter:  & \theprofOne \\
+            Gutachter: & \theprofTwo \\
         \end{tabular}
-        \\[10em]
+        \\[6em]
         \thelocatin, \today
     }
     \pagenumbering{gobble}
@@ -394,18 +402,48 @@
     \pagenumbering{gobble}
     \ifthenelse{\boolean{german}}{
         \addchap*{Erklärung}
-        Ich versichere, dass ich die Arbeit ohne fremde Hilfe und ohne Benutzung anderer als der angegebenen Quellen angefertigt habe und dass die Arbeit in gleicher oder ähnlicher Form noch keiner anderen Prüfungsbehörde vorgelegen hat und von dieser als Teil einer Prüfungsleistung angenommen wurde.\\
-        Alle Ausführungen, die wörtlich oder sinngemäß übernommen wurden, sind als solche gekennzeichnet.
+        \addchap*{Declaration}
+        Ich versichere, dass ich die vorliegende Arbeit ohne unzulässige Hilfe Dritter und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe.
+        Die aus anderen Quellen direkt oder indirekt übernommenen Daten und Konzepte sind unter Angabe der Quelle gekennzeichnet.
+
+
+        Bei der Auswahl und Auswertung folgenden Materials haben mir die nachstehend aufgeführten Personen in der jeweils beschriebenen Weise \sout{entgeltlich}/unentgeltlich geholfen:
+        \begin{enumerate}
+            \item ....
+            \item ...
+            \item ...
+        \end{enumerate}
+        Weitere Personen waren an der inhaltlich-materiellen Erstellung der vorliegenden Arbeit nicht beteiligt.
+        Insbesondere habe ich hierfür nicht die entgeltliche Hilfe von Vermittlungs bzw. Beratungsdiensten (Promotionsberater oder anderer Personen) in Anspruch genommen.
+        Niemand hat von mir unmittelbar oder mittelbar geldwerte Leistungen für Arbeiten erhalten, die im Zusammenhang mit dem Inhalt der vorgelegten Dissertation stehen.
+
+
+        Die Arbeit wurde bisher weder im In- noch im Ausland in gleicher oder ähnlicher Form einer Prüfungsbehörde vorgelegt.
+        Ich bin darauf hingewiesen worden, dass die Unrichtigkeit der vorstehenden Erklärung als Täuschungsversuch bewertet wird und gemäß § 7 Abs. 10 der Promotionsordnung den Abbruch des Promotionsverfahrens zur Folge hat.
     }{
         \addchap*{Declaration}
-        I declare that the work is entirely my own and was produced with no assistance from third parties.\\
-        I certify that the work has not been submitted in the same or any similar form for assessment to any other examining body and all references, direct and indirect, are indicated as such and have been cited accordingly.
+        Ich versichere, dass ich die vorliegende Arbeit ohne unzulässige Hilfe Dritter und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe.
+        Die aus anderen Quellen direkt oder indirekt übernommenen Daten und Konzepte sind unter Angabe der Quelle gekennzeichnet.
+
+
+        Bei der Auswahl und Auswertung folgenden Materials haben mir die nachstehend aufgeführten Personen in der jeweils beschriebenen Weise \sout{entgeltlich}/unentgeltlich geholfen:
+        \begin{enumerate}
+            \item ....
+            \item ...
+            \item ...
+        \end{enumerate}
+        Weitere Personen waren an der inhaltlich-materiellen Erstellung der vorliegenden Arbeit nicht beteiligt.
+        Insbesondere habe ich hierfür nicht die entgeltliche Hilfe von Vermittlungs bzw. Beratungsdiensten (Promotionsberater oder anderer Personen) in Anspruch genommen.
+        Niemand hat von mir unmittelbar oder mittelbar geldwerte Leistungen für Arbeiten erhalten, die im Zusammenhang mit dem Inhalt der vorgelegten Dissertation stehen.
+
+
+        Die Arbeit wurde bisher weder im In- noch im Ausland in gleicher oder ähnlicher Form einer Prüfungsbehörde vorgelegt.
+        Ich bin darauf hingewiesen worden, dass die Unrichtigkeit der vorstehenden Erklärung als Täuschungsversuch bewertet wird und gemäß § 7 Abs. 10 der Promotionsordnung den Abbruch des Promotionsverfahrens zur Folge hat.
     }
-    \vspace{3cm}
-    \thelocatin,
-    \newline
+    \vspace{1cm} \\
+    \thelocatin, \today \\[2em]
+    \textsc{\@author}
     \rule[-0.2cm]{5cm}{0.5pt}
-    \textsc{\author}
 }
 
 
