@@ -78,16 +78,7 @@
 \addtokomafont{subsubsection}{\color{lightgray}}
 \addtokomafont{paragraph}{\color{blue}}
 
-% Page settings FIXME: maybe use default or geometry
-\setlength{\topmargin}{1cm}
-\setlength{\headheight}{12pt}
-\setlength{\headsep}{20pt}
-\setlength{\topskip}{12pt}
-\setlength{\evensidemargin}{0pt}
-\setlength{\oddsidemargin}{0pt}
-\setlength{\textheight}{250mm}
-\setlength{\textwidth}{160mm}
-\setlength{\voffset}{-2cm}
+\usepackage[left=2.2cm, right=2.2cm, top=2.2cm, bottom=2.2cm]{geometry}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 
