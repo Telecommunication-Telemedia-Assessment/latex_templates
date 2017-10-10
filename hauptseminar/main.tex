@@ -1,0 +1,279 @@
+%% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%% Hauptdatei, Wurzel des Dokuments
+%% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%
+%  Gerüst:
+%  * Version 0.11
+%  * Dipl.-Ing. Karsten Renhak, karsten.renhak@tu-ilmenau.de
+%  * Fachgebiet Kommunikationsnetze, TU Ilmenau
+%
+%  Für Hauptseminare, Studienarbeiten, Diplomarbeiten
+%
+%  Autor           : Max Mustermann
+%  Letzte Änderung : 31.12.2011
+%
+
+% Headerfeld, Typ des Dokumentes, einzubindende Packages.
+% Hier bei Bedarf Änderungen vornehmen.
+\documentclass
+[   twoside=false,     % Einseitiger oder zweiseitiger Druck?
+    fontsize=11pt,     % Bezug: 12-Punkt Schriftgröße
+    %DIV=15,            % Randaufteilung, siehe Dokumentation "KOMA"-Script
+    %BCOR=17mm,         % Bindekorrektur: Innen 17mm Platz lassen. Copyshop-getestet
+    headsepline,  % Unter Kopfzeile Trennlinie (aus: headnosepline)
+    footsepline,  % Über Fußzeile Trennlinie (aus: footnosepline)
+    open=right,        % Neue Kapitel im zweiseitigen Druck rechts beginnen lassen
+    paper=a4,          % Seitenformat A4
+    abstract=false,     % Abstract einbinden
+    listof=totoc,      % Div. Verzeichnisse ins Inhaltsverzeichnis aufnehmen
+    bibliography=totoc,% Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
+    titlepage,         % Titelseite aktivieren
+    headinclude=true,  % Seiten-Head in die Satzspiegelberechnung mit einbeziehen
+    footinclude=false, % Seiten-Foot nicht in die Satzspiegelberechnung mit einbeziehen
+    numbers=noenddot   % Gliederungsnummern ohne abschließenden Punkt darstellen
+]   {scrreprt}         % Dokumentenstil: "Report" aus dem KOMA-Skript-Paket
+
+\usepackage[active]{srcltx}
+%\usepackage[activate=normal]{pdfcprot} % Optischer Randausgleich -> pdflatex!
+\usepackage{ifthen}
+\usepackage[german]{babel}
+%\usepackage[latin1]{inputenc} % Zeichencodierung nach ISO-8859-1
+\usepackage[utf8]{inputenc}   %	Zeichencodierung nach UTF-8 (Unicode)
+\usepackage[T1]{fontenc}
+%\usepackage{ae} % obsolet und durch lmodern ersetzt
+\usepackage{lmodern}
+\usepackage[T1]{url}
+\usepackage[final]{graphicx}
+\usepackage[automark]{scrpage2}
+\usepackage{setspace}
+%\usepackage[first,light]{draftcopy} % Für Probedruck
+\usepackage[plainpages=false,pdfpagelabels,hypertexnames=false]{hyperref}
+%Listing-Settings
+\usepackage{listings}
+\usepackage{courier}
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+% Nomencl-settings
+\usepackage[intoc]{nomencl}
+\AtBeginDocument{\setlength{\nomlabelwidth}{.4\columnwidth}}
+\let\abbrev\nomenclature
+\renewcommand{\nomname}{Abkürzungs- und Akronymverzeichnis}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\setlength{\nomitemsep}{-\parsep}
+\makenomenclature
+% Package für Tabellen
+\usepackage{tabularx}
+% Package 2 für Tabellen
+\usepackage{longtable}
+\usepackage{ragged2e,array,longtable}
+% Linienstärkenfix für Tabellen
+\setlength\arrayrulewidth{1pt}
+% Package für Haken & Farbe
+\usepackage{amssymb}
+\usepackage[fleqn]{amsmath} % For creating equations without numbers
+%\usepackage{color}
+\usepackage[xcdraw]{xcolor}
+%Package für Eurozeichen
+\usepackage{eurosym}
+%Package für Querformatmodus
+\usepackage{lscape}
+%Package for making dirtrees
+\usepackage{dirtree}
+
+\usepackage{enumitem}
+\newcommand\CMSF[1]{\textcolor{orange}{SF: #1}} % For comments
+\setlist[enumerate]{leftmargin=15pt}
+
+% Definitions for Listings
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+	basicstyle=\normalfont\ttfamily,
+	numbers=left,
+	numberstyle=\scriptsize,
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=lines,
+	backgroundcolor=\color{background},
+	literate=
+	*{0}{{{\color{numb}0}}}{1}
+	{1}{{{\color{numb}1}}}{1}
+	{2}{{{\color{numb}2}}}{1}
+	{3}{{{\color{numb}3}}}{1}
+	{4}{{{\color{numb}4}}}{1}
+	{5}{{{\color{numb}5}}}{1}
+	{6}{{{\color{numb}6}}}{1}
+	{7}{{{\color{numb}7}}}{1}
+	{8}{{{\color{numb}8}}}{1}
+	{9}{{{\color{numb}9}}}{1}
+	{:}{{{\color{punct}{:}}}}{1}
+	{,}{{{\color{punct}{,}}}}{1}
+	{\{}{{{\color{delim}{\{}}}}{1}
+	{\}}{{{\color{delim}{\}}}}}{1}
+	{[}{{{\color{delim}{[}}}}{1}
+	{]}{{{\color{delim}{]}}}}{1},
+}
+
+
+
+% \usepackage{float}
+% Package for defining new floats
+\usepackage{newfloat}
+% Define myequation as new float environment
+\DeclareFloatingEnvironment[fileext=lop]{Equation}
+
+\usepackage{microtype}
+%Paket für Seitenränder
+\usepackage{geometry}
+\usepackage{colortbl}
+\usepackage{pdfpages}
+\usepackage{verbatim} %Block Comments
+\usepackage{spverbatim} %Block Code with line break
+\geometry{a4paper, top=30mm, left=40mm, right=30mm, bottom=30mm}
+
+% For drawing numbers with circles around
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Tiefe der Kapitelnummerierung beeinflussen
+\setcounter{secnumdepth}{2} % Tiefe der Nummerierung
+\setcounter{tocdepth}{2}    % Tiefe des Inhaltsverzeichnisses
+
+% Hier in die zweite geschweifte Klammer jeweils
+% die persönlichen Daten und das Thema der Arbeit eintragen:
+\newcommand{\artderausarbeitung}{Hauptseminar}
+\newcommand{\namedesautors}{}
+\newcommand{\themaderarbeit}{Thema der Arbeit}
+%\renewcommand*{\chapterheadstartvskip}{\vspace*{.1\baselineskip}}
+\renewcommand*\chapterheadstartvskip{\vspace*{-\topskip}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{1.5\baselineskip}}
+
+% PDF Metadaten definieren
+\hypersetup{
+   pdftitle={\themaderarbeit},
+   pdfsubject={\artderausarbeitung},
+   pdfauthor={\namedesautors},
+   pdfkeywords={\artderausarbeitung Hauptseminar}}
+
+
+% Abkürzungsverzeichnis beeinflussen. Hier nichts ändern!
+\usepackage{acronym}
+
+% Seitenlayout festlegen. Hier nichts ändern!
+\pagestyle{scrplain}
+\ihead[]{\headmark}
+\ohead[]{}
+\chead[]{}
+\ifoot[]{}
+\ofoot[]{}
+\cfoot[]{\pagemark}
+\renewcommand{\titlepagestyle}{scrheadings}
+\renewcommand{\partpagestyle}{scrheadings}
+\renewcommand{\chapterpagestyle}{scrheadings}
+\renewcommand{\indexpagestyle}{scrheadings}
+
+% Abschnittsweise Nummerierung anstatt fortlaufend. Hier nichts ändern!
+\makeatletter
+\@addtoreset{equation}{chapter}
+\@addtoreset{figure}{chapter}
+\@addtoreset{table}{chapter}
+\renewcommand\theequation{\thechapter.\@arabic\c@equation}
+\renewcommand\thefigure{\thechapter.\@arabic\c@figure}
+\renewcommand\thetable{\thechapter.\@arabic\c@table}
+\makeatother
+
+% Quelltextrahmen, klein. Hier nichts ändern!
+\newsavebox{\inhaltkl}
+\def\rahmenkl{\sbox{\inhaltkl}\bgroup\small\renewcommand{\baselinestretch}{1}\vbox\bgroup\hsize\textwidth}
+\def\endrahmenkl{\par\vskip-\lastskip\egroup\egroup\fboxsep3mm%
+\framebox[\textwidth][l]{\usebox{\inhaltkl}}}
+
+% Quelltextrahmen, normale Groesse. Hier nichts ändern!
+\newsavebox{\inhalt}
+\def\rahmen{\sbox{\inhalt}\bgroup\renewcommand{\baselinestretch}{1}\vbox\bgroup\hsize\textwidth}
+\def\endrahmen{\par\vskip-\lastskip\egroup\egroup\fboxsep3mm%
+\framebox[\textwidth][l]{\usebox{\inhalt}}}
+
+% Trennvorschläge für falsch getrennte Wörter.
+% Wird häufig bei eingedeutschen Wörtern benötigt, da LaTeX hierbei
+% gerne falsch trennt. Alternativ kann auch im Fliesstext ein
+% Trennvorschlag per "\-" hinterlegt werden, bspw.:
+% Die Hard\-ware besteht aus A und B.
+\hyphenation{
+Hard-ware
+}
+
+% Sonstige Befehlsdefinitionen hier ablegen.
+\newcommand{\entspricht}{\stackrel{\wedge}{=}}
+
+% Tabellenspaltendefinitionen mit fester Breite --> somit Zeilenumbruch innerhalb einer Zelle möglich
+% aus http://www.torsten-schuetze.de/tex/tabsatz-2004.pdf
+\usepackage{array, booktabs}
+\newcolumntype{f}{>{$}l<{$}}
+\newcolumntype{n}{>{\raggedright}l}
+\newcolumntype{N}{>{\scriptsize}l}
+\newcolumntype{v}[1]{>{\raggedright\hspace{0pt}}m{#1}}
+\newcolumntype{V}[1]{>{\scriptsize\raggedright\hspace{0pt}}m{#1}}
+\newcolumntype{Z}[1]{>{\raggedright\centering}m{#1}}
+\newcolumntype{k}[1]{>{\raggedright}p{#1}}
+% ergibt Tabllenspalte fester Breite, linksbündig
+% Umbruch innerhalb der Zelle mit \\, neue Tabellezeile mit \tabularnewline
+% \addlinespace für Gruppentrennung (aus \texttt{booktabs.sty})
+\usepackage{url} % Package for URL line breaks in bibliography
+\def\UrlBreaks{\do\/\do-}
+
+\begin{document}
+\begin{spacing}{1,5}
+\input{titlepage.tex}
+% Danksagung + Abstract einbinden
+% \input{acknowledgement.tex}
+
+% Kann entfernt werden wenn mit Hauptteil begonnen
+\cleardoublepage
+\pagenumbering{roman} % Nummerierung der Seiten ab hier: 1, 2, 3, 4...
+\pagestyle{scrheadings}
+
+
+% Inhaltsverzeichnis
+\cleardoublepage % Seitenumbruch erzwingen vor Änderung des Nummerierungsstils
+%\pagenumbering{roman} % Nummerierung der Seiten ab hier: i, ii, iii, iv...
+\pagestyle{scrheadings} % Ab hier mit Kopf- und Fusszeile
+\tableofcontents
+% Die einzelnen Kapitel
+\cleardoublepage % Seitenumbruch erzwingen vor Änderung des Nummerierungsstils
+\pagenumbering{arabic} % Nummerierung der Seiten ab hier: 1, 2, 3, 4...
+%\input{abstract.tex}
+\input{chapter1.tex}
+\input{chapter2.tex}
+\input{chapter3.tex}
+%\input{chapter4.tex}
+%\input{chapter5.tex}
+
+\appendix
+
+% Literaturverzeichnis einbinden
+\input{appendix_bibliography.tex}
+
+% Abkürzungsverzeichnis einbinden
+\input{appendix_abbreviationsacronymsdirectory.tex}
+
+% Abbildungsverzeichnis einbinden
+\input{appendix_listoffigures.tex}
+
+% Tabellenverzeichnis einbinden
+%\input{appendix_listoftables.tex}
+
+% Anhang einbinden
+%\renewcommand{\thesection}{\Alph{section}}
+%\input{appendix.tex}
+
+% Eigenständigkeitserklärung
+\input{appendix_declarationofauthorship.tex}
+
+\end{spacing}
+\end{document}

@@ -1,0 +1,218 @@
+\chapter[Appendix]{Appendix}
+%\contentsname{\def\chaptername{Appendix}}
+\ihead[]{Appendix}
+%\addcontentsline{toc}{chapter}{Appendix}
+
+\section{Simulator Sickness Questionnaire} \label{appendix:SSQ}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}\hline
+		\rowcolor[gray] {.6} \textbf{SSQ Symptom\footnotemark} & \textbf{N} & \textbf{O} & \textbf{D} \\ \hline
+		General discomfort & 1 & 1 &  \\ \hline
+		Fatigue &  & 1 &  \\ \hline
+		Headache &  & 1 &  \\ \hline
+		Eyestrain &  & 1 &  \\ \hline
+		Difficulty focusing &  & 1 & 1 \\ \hline
+		Increased salivation & 1 &  &  \\ \hline
+		Sweating & 1 &  &  \\ \hline
+		Nausea & 1 &  & 1 \\ \hline
+		Difficulty concentrating & 1 & 1 &  \\ \hline
+		Fullness of head &  &  & 1 \\ \hline
+		Blurred vision &  & 1 & 1 \\ \hline
+		Dizzy (eyes open) &  &  & 1 \\ \hline
+		Dizzy (eyes closed) &  &  & 1 \\ \hline
+		Vertigo &  &  & 1 \\ \hline
+		Stomach awareness & 1 &  &  \\ \hline
+		Burping & 1 &  &  \\ \hline \hline
+		Total\footnotemark & [1] & [2] & [3] \\ \hline
+	\end{tabular}
+	\caption{SSQ symptoms and related weights (cf. \cite[p. 212]{kennedy1993simulator})}
+	\label{table:SSQ_symptoms_weights}
+\end{table}
+\noindent Calculation of scores according to \cite[p. 212]{kennedy1993simulator}: \\
+$N=[1]*9.54$\\
+$O=[2]*7.58$\\
+$D=[3]*13.92$\\
+$TS=([1]+[2]+[3])*3.74$
+\footnotetext[1]{Scored 0, 1, 2, 3.}
+\footnotetext[2]{Sum calculated by adding symptom scores. All omitted scores in the table are zero.}
+\newpage
+
+\section{Technical specifications of HTC Vive and Oculus Rift} \label{appendix:vive_rift_specs}
+
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|p{2.8cm}|p{4.8cm}|p{4.8cm}|}\hline
+		\rowcolor[gray] {.6} \textbf{Parameter} & \textbf{HTC Vive} & \textbf{Oculus Rift} \\ \hline
+		Display & OLED & OLED \\ \hline
+		Resolution & $2160 \times 1200$ & $2160 \times 1200$ \\ \hline
+		Display Refresh rate & 90\,Hz & 90\,Hz \\ \hline
+		Display Pixel density (cf. \cite{link:tomshardware_vive_rift_specs}) & 447\,ppi & 456\,ppi \\ \hline
+		Field of View & $110^{\circ}$ & $110^{\circ}$ \\ \hline
+		Sensors & Accelerometer, gyroscope, magnetometer, constellation tracking camera & Accelerometer, gyroscope, Lighthouse tracking system, front-facing camera \\ \hline
+		Connections & HDMI, USB 2.0, USB 3.0 & HDMI, USB 2.0, USB 3.0 \\ \hline
+	\end{tabular}
+	\caption{Specifications of HTC Vive and Oculus Rift (cf.  \cite{link:tomshardware_vive_rift_specs}, \cite{link:rift_vive_specs_digitaltrends}, \cite{link:vive_homepage})}
+	\label{table:specs_vive_rift}
+\end{table}
+
+\section{Technical specifications of Merge VR} \label{appendix:mergevr_specs}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|p{2.8cm}|p{6cm}|}\hline
+		\rowcolor[gray] {.6} \textbf{Parameter} & \textbf{Merge VR} \\ \hline
+		Field of View & $96^{\circ}$ \\ \hline
+		Lens diameter & 42\,mm \\ \hline
+		Display & Dependent on inserted device \\ \hline
+		Resolution & Dependent on inserted device \\ \hline
+		Display Refresh rate & Dependent on inserted device \\ \hline
+		Sensors & Dependent on inserted device \\ \hline
+	\end{tabular}
+	\caption{Specifications of Merge VR (cf. \cite{link:mergevr_goggles})}
+	\label{table:mergevr_specs}
+\end{table}
+
+
+\section{Technical Specifications of Qualisys PC} \label{appendix:qualisys_specs}
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|>{\RaggedRight}p{3cm}|>{\RaggedRight}p{9cm}|}\hline
+		\rowcolor[gray] {.6} \textbf{Component} & \textbf{Name} \\ \hline
+		CPU & Intel Core i7-6700K \\ \hline
+		Graphics card & NVIDIA GeForce GTX 750 Ti \\ \hline
+		RAM & 16\,GB \\ \hline
+		Network adapter & Intel I211 Ethernet Controller \\ \hline
+		Harddisk & Samsung SSD 750 Evo 250\,GB,\newline WDC WD20EFRX-68EUZN0 \\ \hline
+		OS & Windows 10 \\ \hline
+	\end{tabular}
+	\caption{Technical specifications of Qualisys PC}
+\end{table}
+
+
+\section{Technical Specifications of lab PC} \label{appendix:specs_lab_pc}
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|>{\RaggedRight}p{3cm}|>{\RaggedRight}p{9cm}|}\hline
+		\rowcolor[gray] {.6} \textbf{Component} & \textbf{Name} \\ \hline
+		CPU & Intel Core i7-6700K \\ \hline
+		Graphics card & NVIDIA GeForce GTX 980 Ti \\ \hline
+		RAM & 16\,GB \\ \hline
+		Network adapter & Intel I219-V Ethernet Controller \\ \hline
+		Harddisk & Samsung SSD 850 Evo 500\,GB,\newline WDC WD1003FZEX-00MK2A0 \\ \hline
+		OS & Windows 7 \\ \hline
+	\end{tabular}
+	\caption{Technical specifications of lab PC}
+\end{table}
+
+
+\section{Technical Specifications of Motorola Moto Z} \label{appendix:specs_moto_z}
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|>{\RaggedRight}p{3cm}|>{\RaggedRight}p{9cm}|}\hline
+		\rowcolor[gray] {.6} \textbf{Component} & \textbf{Name} \\ \hline
+		Chipset & Qualcomm MSM8996 Snapdragon 820 \\ \hline
+		GPU & Adreno 530 \\ \hline
+		RAM & 4\,GB \\ \hline
+		Memory & 32\,GB internal \\ \hline
+		Display & 5.5\,'' $1440\times2560$ AMOLED screen ($\approx535\,ppi$) \\ \hline
+		Sensors & Fingerprint, accelerometer, gyroscope, proximity, compass \\ \hline
+		OS & Android 7.0 \\ \hline
+	\end{tabular}
+	\caption{Technical specifications of Motorola Moto Z (cf. \cite{link:moto_z_specs})}
+\end{table}
+
+\section{Additional Information about Test Sequences} \label{appendix:additional_information_sequences}
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|p{0.5cm}|p{3.2cm}|p{8.7cm}|}\hline
+		\rowcolor[gray] {.6} \textbf{ID} & \textbf{Timestamp} & \textbf{Link} \\ \hline
+		1 & 00:00:08 – 00:03:01 & / (student project) \\ \hline
+		2 & 00:00:22 – 00:03:01 & https://www.youtube.com/watch?v=yA34HDry2P8 \\ \hline
+		3 & 00:00:03 – 00:03:01 & https://www.youtube.com/watch?v=jU-pZSsYhDk \\ \hline
+	\end{tabular}
+	\caption{Timestamps and links of used test sequences}
+\end{table}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=10cm]{pictures/SITI_1.pdf}
+	\caption{SI/TI values per frame of sequence 1 (source: own figure)}
+	\label{picture:siti_1}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=10cm]{pictures/SITI_2.pdf}
+	\caption{SI/TI values per frame of sequence 2 (source: own figure)}
+	\label{picture:siti_2}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=10cm]{pictures/SITI_3.pdf}
+	\caption{SI/TI values per frame of sequence 3 (source: own figure)}
+	\label{picture:siti_3}
+\end{figure}
+
+\cleardoublepage
+
+\section{Questionnaires used in Proof of Concept Test} \label{appendix:questionnaires}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=14cm]{pictures/poc_questionnairesp1.pdf}
+	\caption{Page 1 of questionnaires used in the PoC test (source: own figure)}
+	\label{picture:poc_questionnairesp1}
+\end{figure}
+
+\cleardoublepage
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=14cm]{pictures/poc_questionnairesp2-4.pdf}
+	\caption{Page 2-4 of questionnaires used in the PoC test (source: own figure)}
+	\label{picture:poc_questionnairesp2-4}
+\end{figure}
+
+
+\section{Parameters of \textit{headify\_shift\_cut\_merge.py}} \label{appendix:headify_shiftcutmerge}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|>{\RaggedRight}p{3cm}|>{\RaggedRight}p{10cm}|}\hline
+		\rowcolor[gray] {.6} \textbf{Parameter} & \textbf{Feature} \\ \hline
+		-cut & Enable synchronisation between Qualisys data and external device by cutting off the not relevant parts of the video.
+		 \\ \hline
+		 -h & Add this parameter to display the help. \\ \hline
+		-onlymerge & Only merge the datasets located in the \textit{data\_modified} directory, hence neither shift or cut them.
+		 \\ \hline
+		-subjects & The number of datasets to evaluate. \\ \hline
+		-yawvalues & The name of the JSON file containing the measured yaw values in the standard position per subject and HMD.
+		 \\ \hline
+	\end{tabular}
+	\caption{Command line parameters of \textit{headify\_shift\_cut\_merge.py}}
+	\label{table:headify_shiftcutmerge}
+\end{table}
+
+
+\section{Parameters of \textit{headify\_evaluation.py}} \label{appendix:headify_evaluation}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|>{\RaggedRight}p{3cm}|>{\RaggedRight}p{10cm}|}\hline
+		\rowcolor[gray] {.6} \textbf{Parameter} & \textbf{Feature} \\ \hline
+		-dynamicfov & The integer percentage value of the dynamic FoV to calculate. \\ \hline
+		-euclideandist & Plot the mean euclidean distance between Qualisys and the used HMD. \\ \hline
+		-fovvideos & Renders videos showing single FoV per subject and dynamic calculated mean FoV including XX\% of all subjects FoVs (adaptable via -dynamicfov). \\ \hline
+		-headturns & Plots mean number of head turns per subject, mean number of head turns per video and HMD and mean number of head turns for videos watched for the first and second time, irrespective of the used HMD.  \\ \hline
+		-plotdynamicfov & Plot the dynamic FoV over time and the mean. \\ \hline
+		-qualisys & Enable evaluation of data recorded by Qualisys. \\ \hline
+		-singlevideos & Plot recorded head rotations over time. If Qualisys parameter enabled, the euclidean distance between both curves will be plot. \\ \hline
+		-standby & Send PC to standby after calculations. \\ \hline
+		-shutdown & Shut down PC after calculations. \\ \hline
+	\end{tabular}
+	\caption{Command line parameters of \textit{headify\_evaluation.py}}
+	\label{table:commands_headify_evaluation}
+\end{table}
