@@ -15,3 +15,5 @@
 *.vrb
 *.nav
 *.snm
+*.nlo
+*.synctex.gz
