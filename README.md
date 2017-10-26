@@ -34,7 +34,7 @@ Here is a short list of some search engines for related work search:
 
 * [scholar](https://scholar.google.de/)
 * [semanticscholar](https://www.semanticscholar.org/)
-* [sciencegate](www.sciencegate.ch/)
+* [sciencegate](http://sciencegate.ch)
 * [CiteSeer](http://citeseerx.ist.psu.edu)
 * [arxiv](http://arxiv.org/)
 * [dblp](http://dblp.uni-trier.de/) : bib entries (that are somehow complete and unified)
@@ -46,5 +46,3 @@ TODOS
 -----
 * add research seminar template
 * add beamer template
-
-
