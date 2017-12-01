@@ -120,7 +120,6 @@
 \renewcommand{\labelitemii}{$\diamond$}
 \renewcommand{\labelitemiii}{$\circ$}
 
-
 \RequirePackage{amssymb}
 
 \RequirePackage[automark]{scrpage2}
