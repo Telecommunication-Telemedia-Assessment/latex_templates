@@ -46,5 +46,3 @@ TODOS
 -----
 * add research seminar template
 * add beamer template
-
-
