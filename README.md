@@ -18,7 +18,7 @@ latexmk -pdf TEMPLATEFILENAME.tex
 Useful tips
 -----------
 
-You should install some latex-GUI, e.g. [Texmaker](http://www.xm1math.net/texmaker/)
+You should install some latex-GUI, e.g. [Texmaker](http://www.xm1math.net/texmaker/).
 All templates include a short guide for using latex commands, a longer guide is for example [Latex](https://en.wikibooks.org/wiki/LaTeX).
 
 
