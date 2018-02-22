@@ -342,10 +342,10 @@
 \newcommand{\bothabstracts}[2]{
 \begingroup
 \let\cleardoublepage\relax
-\addchap*{Zusammenfassung}
+\section*{Zusammenfassung}
 #1
-\clearpage
-\addchap*{Abstract}
+%\clearpage
+\section*{Abstract}
 #2
 \endgroup
 }
@@ -373,6 +373,7 @@
 
 
 \RequirePackage[style=alphabetic,
-                natbib=true
+                natbib=true,
+                backend=bibtex
                ]{biblatex}
 

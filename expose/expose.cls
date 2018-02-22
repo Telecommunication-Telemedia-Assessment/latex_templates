@@ -131,7 +131,8 @@
 }
 
 \usepackage[style=numeric,
-            natbib=true
+            natbib=true,
+            backend=bibtex
            ]{biblatex}
 
 \chair{AVT}
