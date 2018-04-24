@@ -1,0 +1,179 @@
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+\usepackage[orientation=landscape,size=custom,width=16,height=10,scale=0.5,debug]{beamerposter}
+
+% für deutsche umlaute und ut8
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%\usepackage{avant}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[english]{babel}
+
+\usepackage[backend=biber,
+            style=numeric,
+            natbib=true,
+            doi=false,
+            isbn=false,
+            url=false
+            ]{biblatex}
+\addbibresource{references.bib}
+
+\makeatletter
+\protected\def\ccell#1#{%
+  \kern-\fboxsep
+  \@ccell{#1}%
+}
+\def\@ccell#1#2#3{%
+  \colorbox#1{#2}{#3}%
+  \kern-\fboxsep
+}
+\makeatother
+
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,shadows,snakes,arrows,matrix,calc,er}
+\usepackage{framed, color}
+
+
+% color definitions
+\definecolor{lightblue}{rgb}{0,0.6,1.0}
+\definecolor{lightgray}{rgb}{0.4,0.4,0.4}
+\definecolor{blue}{rgb}{0,0.3,0.6}
+\definecolor{darkblue}{rgb}{0,0.1,0.4}
+\definecolor{green}{rgb}{0,0.7,0.2}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+
+
+\definecolor{TUILOrange}{RGB}{255, 121, 0}
+\definecolor{TUILBlack}{RGB}{0, 0, 0}
+\definecolor{TUILGreen}{RGB}{0, 116, 122}
+\definecolor{TUILBlue}{RGB}{0, 51, 89}
+\definecolor{TUILGray}{RGB}{149,149,149}
+
+\definecolor{tcom}{rgb}{0.886, 0, 0.455}
+
+% design changes
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{title}{fg=TUILOrange}
+\setbeamercolor{author}{fg=TUILBlue}
+\setbeamercolor{frametitle}{fg=TUILOrange}
+\setbeamercolor{background canvas}{bg=white}
+
+\setbeamertemplate{itemize item}{\color{TUILGreen}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{TUILGreen}$\circ$}
+\setbeamercolor{section in toc}{fg=TUILGray}
+\setbeamercolor{subsection in toc}{fg=TUILGray}
+
+\setbeamercolor{normal text}{fg=TUILBlue}
+
+\usebibitemtemplate{\insertbiblabel}
+
+\beamertemplatenavigationsymbolsempty
+
+\setbeamercovered{transparent}
+
+\usebackgroundtemplate{}
+
+\usepackage{array}
+% H as hiding column
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+%\boldmath
+
+%\usepackage{helvet}
+\usepackage{lmodern} % moderne schriftart
+
+%\renewcommand\sfdefault{phv}
+%\renewcommand\familydefault{\sfdefault}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% bold- text
+%\renewcommand{\seriesdefault}{\bfdefault}
+
+\usepackage{pgfplots}
+
+\usetikzlibrary{shadows}
+\usetikzlibrary{shadings}
+
+% todo makro
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+% hide makro
+\newcommand{\None}[1]{}
+
+
+\newcommand{\xG}[1]{\textcolor{green}{#1}}
+\newcommand{\xR}[1]{\textcolor{red}{#1}}
+\newcommand{\xO}[1]{\textcolor{TUILOrange}{#1}}
+\newcommand{\xB}[1]{\textcolor{lightblue}{#1}}
+\newcommand{\xBB}[1]{\textbf{\textcolor{lightblue}{#1}}}
+\newcommand{\vitem}{\vfill\item}
+
+
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{tcolorbox}
+\usepackage{pgf}
+
+% infos
+\title{Title}
+\author{{\small
+        \underline{Steve G\"{o}ring}
+       }
+}
+\titlegraphic{%
+  \includegraphics[height=0.8cm]{logo.pdf}
+}
+
+\logo{%
+  \pgfputat{\pgfxy(-0.3,8.3)}{\pgfbox[right,base]{\includegraphics[height=0.8cm]{logo.pdf}}}
+}
+
+\year=2018
+\day=12
+\month=01
+\date{\today}
+
+
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+    \maketitle{}
+\end{frame}
+
+\frame{
+    \frametitle{Motivation}
+
+    \begin{itemize}[<+->]
+        \vitem staring...
+        \vitem \cite{Berlin}
+        \vitem \citeauthor{raake2014quality}
+    \end{itemize}
+    \onslide<+->{
+    \vfill{}
+    $\rightarrow$ next
+    }
+}
+
+
+\frame{
+    \frametitle{Thank you for your attention}
+    \begin{center}
+        \includegraphics[width=0.5\columnwidth]{./figures/questions}
+    \end{center}
+    \vfill
+    \ldots \ldots{} are there any questions?
+}
+\begin{frame}[t,allowframebreaks]
+    \frametitle{References}
+    \printbibliography
+\end{frame}
+
+
+
+\end{document}
