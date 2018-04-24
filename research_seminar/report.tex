@@ -1,0 +1,95 @@
+\documentclass[conference,a4paper]{IEEEtran}
+
+%\usepackage[latin1]{inputenc}
+
+\usepackage{booktabs} % For formal tables
+\usepackage{setspace}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage[backend=biber,
+            style=numeric,
+            natbib=true,
+            doi=false,
+            isbn=false,
+            url=false,
+            maxnames=2,
+            maxcitenames=1,
+            giveninits=true,
+            url=false]{biblatex}
+\addbibresource{literature.bib}
+\usepackage[colorinlistoftodos]{todonotes} % todonotes
+
+% some local commands
+\newcommand{\todoI}[1]{\todo[inline]{#1}}
+\newcommand{\Gr}[1]{{\color{green!45!black}#1}}
+\newcommand{\R}[1]{{\color{red!45!black}#1}}
+\newcommand{\B}[1]{{\color{blue!70!black}#1}}
+\newcommand{\W}[1]{{\color{white}#1}}
+\newcommand{\MAR}[1]{{\color{blue!70!black}#1}}
+
+\newcommand{\None}[1]{}
+
+\newcommand*\mean[1]{\overline{#1}}
+\newcommand{\ft}[1]{\textit{#1}}
+\newcommand{\ex}[1]{\textsc{#1}}
+\newcommand{\baseurl}{\R{in-camera-ready-version}}
+
+\newcommand{\TEXT}[1]{{#1}}
+\usepackage{subeqnarray}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+
+
+\title{4K Video Quality Research Seminar}
+
+\author{\IEEEauthorblockN{Author 1 \quad Author 2}
+\IEEEauthorblockA{Email: [author1, author2]@tu-ilmenau.de}}
+}
+
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+
+
+%\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+
+\section{Related Work}
+
+\section{Our Approach} \label{sec::approach:features}
+
+
+\section{Experimental Evaluation} \label{sec::experiments}
+
+
+
+% sum up everything
+% what we described
+% whats new
+% findings
+% future work
+\section{Conclusion}
+
+
+\section{References}
+{
+\begingroup
+    %\setstretch{0.8}
+    \renewcommand{\bibfont}{\small}
+    %\setlength\bibitemsep{0pt}
+    %\sloppy
+    \printbibliography[heading=none]
+
+\endgroup
+}
+
+
+\end{document}
