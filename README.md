@@ -50,3 +50,4 @@ For presentations please checkout the `presentation` folder.
 Research Seminar
 ----------------
 For research seminar we use the IEEEtran template (https://www.ieee.org/conferences/publishing/templates.html).
+Check the `research_seminar` subfolder, where mostly everything is already prepared.
