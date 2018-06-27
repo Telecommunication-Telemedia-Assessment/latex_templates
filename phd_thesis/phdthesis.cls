@@ -27,7 +27,7 @@
             a4paper,
             twoside, % two pages
             openright,
-            BCOR=30mm,
+            BCOR=10mm,
             DIV=16,
             cleardoublepage=plain,
             headsepline,
@@ -63,7 +63,7 @@
             a4paper,
             twoside, % two pages
             openright,
-            BCOR=30mm,
+            BCOR=10mm,
             DIV=16,
             cleardoublepage=plain,
             headsepline,
@@ -161,10 +161,10 @@
 
 
 \renewcommand*{\sectionformat}{%
-  \textcolor{TUILGreen}{\llap{\thesection\autodot\enskip}}%
+  \textcolor{TUILGreen}{{\thesection\autodot\enskip}}%
 }
 \renewcommand*{\subsectionformat}{%
-  \textcolor{TUILGray}{\llap{\thesubsection\autodot\enskip}}%
+  \textcolor{TUILGray}{{\thesubsection\autodot\enskip}}%
 }
 
 \RedeclareSectionCommand[
