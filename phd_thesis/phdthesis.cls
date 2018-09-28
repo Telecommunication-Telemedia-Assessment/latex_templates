@@ -148,7 +148,8 @@
 
 % color definitions
 \definecolor{lightblue}{rgb}{0,0.6,1.0}
-\definecolor{lightgray}{rgb}{0.2,0.2,0.2}
+\definecolor{lightgray}{rgb}{0.6,0.6,0.6}
+\definecolor{darkgray}{rgb}{0.4,0.4,0.4}
 \definecolor{blue}{rgb}{0,0.3,0.6}
 \definecolor{darkblue}{rgb}{0,0.1,0.4}
 \definecolor{green}{rgb}{0,0.7,0.2}
@@ -203,11 +204,11 @@
 
 \hypersetup{%
     colorlinks=true,% links einfaerben, oder box drum malen?
-    linkcolor={TUILGray},% verweise im doc, ua inhaltsverzeichnis
+    linkcolor={darkgray},% verweise im doc, ua inhaltsverzeichnis
     citecolor={TUILOrange},
-    filecolor={TUILGray},
-    filecolor=TUILGray,
-    urlcolor={TUILGray}
+    filecolor={darkgray},
+    filecolor=darkgray,
+    urlcolor={darkgray}
     }
 
 % header and footer
