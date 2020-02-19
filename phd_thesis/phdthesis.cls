@@ -230,12 +230,11 @@
 \RequirePackage[scaled]{helvet} % ss
 \RequirePackage{courier} % tt
 \normalfont
-\RequirePackage[T1]{fontenc}
 
 \RequirePackage[T1]{fontenc}
-\renewcommand*\familydefault{\sfdefault}
+\renewcommand*\familydefault{\rmdefault}
 
-\setkomafont{sectioning}{\normalfont\bfseries}
+\setkomafont{sectioning}{\normalfont\bfseries\sffamily}
 \setkomafont{descriptionlabel}{\normalfont\bfseries}
 \setkomafont{captionlabel}{\bfseries\footnotesize}
 \setkomafont{caption}{\footnotesize}
@@ -245,12 +244,10 @@
     \addtokomafont{chapter}{\color{darkblue}}
     \addtokomafont{section}{\color{darkblue}}
     \addtokomafont{subsection}{\color{blue}}
-    \addtokomafont{subsubsection}{\color{lightgray}}
-    \addtokomafont{paragraph}{\color{blue}}
+    \addtokomafont{paragraph}{\color{TUILBlue}}
 }{
 
 }
-
 
 % own commands
 \newcommand{\hide}[1]{}
@@ -263,6 +260,12 @@
 \newcommand{\R}[1]{{ \color{red!45!black}#1}}
 \newcommand{\B}[1]{{ \color{blue!70!black}#1}}
 \newcommand{\W}[1]{{ \color{white}#1}}
+
+% renamed color commands.
+\newcommand{\xG}[1]{{ \color{green!45!black}#1}}
+\newcommand{\xR}[1]{{ \color{red!45!black}#1}}
+\newcommand{\xB}[1]{{ \color{blue!70!black}#1}}
+\newcommand{\xBB}[1]{ {\textbf{\color{TUILBlue}#1}}}
 
 
 
@@ -304,16 +307,16 @@
 \newcommand{\thesisfor}[1]{\gdef\thethesisfor{#1}}
 \newcommand{\authorbirthday}[1]{\gdef\theauthorbirthday{#1}}
 
-
-\newcommand{\profOne}[1]{\gdef\theprofOne{#1}}
-\newcommand{\profTwo}[1]{\gdef\theprofTwo{#1}}
+\newcommand{\reviewerOne}[1]{\gdef\thereviewerOne{#1}}
+\newcommand{\reviewerTwo}[1]{\gdef\thereviewerTwo{#1}}
 \newcommand{\supervisor}[1]{\gdef\thesupervisor{#1}}
 \newcommand{\chair}[1]{\gdef\thechair{#1}}
 \newcommand{\course}[1]{\gdef\thecourse{#1}}
 \newcommand{\faculty}[1]{\gdef\thefaculty{#1}}
 \newcommand{\institut}[1]{\gdef\theinstitut{#1}}
 \newcommand{\locatin}[1]{\gdef\thelocatin{#1}}
-
+\newcommand{\submissiondate}[1]{\gdef\thesubmissiondate{#1}}
+\newcommand{\defencedate}[1]{\gdef\thedefencedate{#1}}
 
 
 \renewcommand*{\maketitle}{%
@@ -340,21 +343,25 @@
             vorgelegt von:               & \@author \\
             geboren am:                  & \theauthorbirthday \\[0.5em]
             Betreuender Gutachter:       & \thesupervisor \\[0.5em]
-            Gutachter:  & \theprofOne \\
-            Gutachter: & \theprofTwo \\
+            Gutachter:  & \thereviewerOne \\
+            Gutachter: & \thereviewerTwo \\
+            Datum der Einreichung: & \thesubmissiondate \\
+            Datum der Verteidigung: & \thedefencedate \\
         \end{tabular}
-        \\[6em]
-        \thelocatin, den \today
+        \\[4em]
+        \thelocatin, \today
     }{
         \begin{tabular}{rl}
             \hline \\
             vorgelegt von:               & \@author \\
             geboren am:                  & \theauthorbirthday \\[0.5em]
             Betreuender Gutachter:       & \thesupervisor \\[0.5em]
-            Gutachter:  & \theprofOne \\
-            Gutachter: & \theprofTwo \\
+            Gutachter:  & \thereviewerOne \\
+            Gutachter: & \thereviewerTwo \\
+            Datum der Einreichung: & \thesubmissiondate \\
+            Datum der Verteidigung: & \thedefencedate \\
         \end{tabular}
-        \\[6em]
+        \\[4em]
         \thelocatin, \today
     }
     \pagenumbering{gobble}
@@ -448,9 +455,14 @@
 }
 
 
+\RequirePackage{microtype}
 
 \RequirePackage[style=alphabetic,
                 natbib=true
                ]{biblatex}
 
+% define citeitem for itemize environments
+\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
+\newcommand{\citeitem}[1]{\item[\cite{#1}\hfill{}] \fullcite{#1}}
+\newcommand{\metric}[1]{\textcolor{TUILGray}{\textit{#1}} }
 
