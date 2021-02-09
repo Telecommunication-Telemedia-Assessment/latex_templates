@@ -122,7 +122,7 @@
 
 \RequirePackage{amssymb}
 
-\RequirePackage[automark]{scrpage2}
+%\RequirePackage[automark]{scrpage2}
 
 
 % latex pictures
