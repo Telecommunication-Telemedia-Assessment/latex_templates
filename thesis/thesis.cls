@@ -149,26 +149,7 @@
 
 
 
-% Paket für Links innerhalb des PDF Dokuments
-\RequirePackage[%
-    %pdftitle={\thema{}},% Titel der erzeugten PDF Datei
-    %pdfauthor={\author{}},%
-    %pdfcreator={LaTeX Skript by stg7},
-    %pdfsubject={\thema{}},%
-    %pdfkeywords={\schluesselwoerter{}}
-    bookmarksopen=true,%
-    bookmarksopenlevel=1,%
-    plainpages=false%
-    ]{hyperref}
 
-\hypersetup{%
-    colorlinks=true,% links einfaerben, oder box drum malen?
-    linkcolor={darkgray},% verweise im doc, ua inhaltsverzeichnis
-    citecolor={darkgray},
-    filecolor={black},
-    filecolor=darkgray,
-    urlcolor={darkgray}
-    }
 
 % header and footer
 %\clearscrheadfoot
@@ -378,3 +359,25 @@
                 backend=bibtex
                ]{biblatex}
 
+
+% must be last package (otherwise links may not work properly)
+% Paket für Links innerhalb des PDF Dokuments
+\RequirePackage[%
+    %pdftitle={\thema{}},% Titel der erzeugten PDF Datei
+    %pdfauthor={\author{}},%
+    %pdfcreator={LaTeX Skript by stg7},
+    %pdfsubject={\thema{}},%
+    %pdfkeywords={\schluesselwoerter{}}
+    bookmarksopen=true,%
+    bookmarksopenlevel=1,%
+    plainpages=false%
+    ]{hyperref}
+
+\hypersetup{%
+    colorlinks=true,% links einfaerben, oder box drum malen?
+    linkcolor={darkgray},% verweise im doc, ua inhaltsverzeichnis
+    citecolor={darkgray},
+    filecolor={black},
+    filecolor=darkgray,
+    urlcolor={darkgray}
+    }

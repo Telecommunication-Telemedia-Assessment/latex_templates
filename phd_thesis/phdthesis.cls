@@ -190,26 +190,7 @@
   \ifstr{#2}{}{}{\titlerule[2pt]\par\nobreak}%
   #2#3\par\nobreak\titlerule[1pt]%
 }
-% Paket für Links innerhalb des PDF Dokuments
-\RequirePackage[%
-    %pdftitle={\thema{}},% Titel der erzeugten PDF Datei
-    %pdfauthor={\author{}},%
-    %pdfcreator={LaTeX Skript by stg7},
-    %pdfsubject={\thema{}},%
-    %pdfkeywords={\schluesselwoerter{}}
-    bookmarksopen=true,%
-    bookmarksopenlevel=1,%
-    plainpages=false%
-    ]{hyperref}
 
-\hypersetup{%
-    colorlinks=true,% links einfaerben, oder box drum malen?
-    linkcolor={darkgray},% verweise im doc, ua inhaltsverzeichnis
-    citecolor={TUILOrange},
-    filecolor={darkgray},
-    filecolor=darkgray,
-    urlcolor={darkgray}
-    }
 
 % header and footer
 %\clearscrheadfoot
@@ -466,3 +447,26 @@
 \newcommand{\citeitem}[1]{\item[\cite{#1}\hfill{}] \fullcite{#1}}
 \newcommand{\metric}[1]{\textcolor{TUILGray}{\textit{#1}} }
 
+
+
+% must be last package (otherwise links may not work properly)
+% Paket für Links innerhalb des PDF Dokuments
+\RequirePackage[%
+    %pdftitle={\thema{}},% Titel der erzeugten PDF Datei
+    %pdfauthor={\author{}},%
+    %pdfcreator={LaTeX Skript by stg7},
+    %pdfsubject={\thema{}},%
+    %pdfkeywords={\schluesselwoerter{}}
+    bookmarksopen=true,%
+    bookmarksopenlevel=1,%
+    plainpages=false%
+    ]{hyperref}
+
+\hypersetup{%
+    colorlinks=true,% links einfaerben, oder box drum malen?
+    linkcolor={darkgray},% verweise im doc, ua inhaltsverzeichnis
+    citecolor={TUILOrange},
+    filecolor={darkgray},
+    filecolor=darkgray,
+    urlcolor={darkgray}
+    }
