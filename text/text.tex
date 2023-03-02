@@ -1,0 +1,34 @@
+\documentclass[german]{class}
+
+
+
+% general; update to concrete title and author
+\title{Example Text}
+\author{James T. Kirk}
+\date{\today}
+
+\addbibresource{references.bib}
+
+\begin{document}
+% create the title
+\maketitle
+
+\tableofcontents
+
+
+
+\section{Intro}
+\cite{goering2021rules}
+Test, \xG{test}
+
+{
+% redefine emph to get rid of the underlining of paper titles
+\renewcommand{\emph}[1]{\textit{#1}}
+%\setstretch{0.8}
+\renewcommand{\bibfont}{}
+\setlength\bibitemsep{0pt}
+\sloppy
+\printbibliography
+}
+
+\end{document}
