@@ -1,0 +1,253 @@
+%\pdfminorversion=4  %without this it does not work for windows.
+\documentclass{beamer}
+
+%\documentclass[handout]{beamer}
+%\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter}
+\usepackage[orientation=portrait, size=a0, scale=1.4]{beamerposter}
+
+% für deutsche umlaute und ut8
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+%\usepackage{avant}
+\usepackage{booktabs}
+\usepackage[english]{babel}
+
+\usepackage[backend=biber,
+            style=numeric,
+            natbib=true,
+            doi=false,
+            isbn=false,
+            url=false,
+            maxnames=1, % change this limit=1 if you want et al. style in the references
+            maxcitenames=1,
+            giveninits=true,
+            bibencoding=utf8]{biblatex}
+
+\addbibresource{literature.bib}
+
+\makeatletter
+\protected\def\ccell#1#{%
+  \kern-\fboxsep
+  \@ccell{#1}%
+}
+\def\@ccell#1#2#3{%
+  \colorbox#1{#2}{#3}%
+  \kern-\fboxsep
+}
+\makeatother
+
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{math,shapes,shadows,snakes,arrows,matrix,calc,er}
+\usepackage{framed, color}
+
+% color definitions
+\definecolor{lightblue}{rgb}{0,0.6,1.0}
+\definecolor{lightgray}{rgb}{0.4,0.4,0.4}
+\definecolor{lightergray}{rgb}{0.9,0.9,0.9}
+\definecolor{blue}{rgb}{0,0.3,0.6}
+\definecolor{darkblue}{rgb}{0,0.1,0.4}
+\definecolor{green}{rgb}{0,0.7,0.2}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+
+
+\definecolor{TUILOrange}{RGB}{255, 121, 0}
+\definecolor{TUILBlack}{RGB}{0, 0, 0}
+\definecolor{TUILGreen}{RGB}{0, 116, 122}
+\definecolor{TUILBlue}{RGB}{0, 51, 89}
+\definecolor{TUILGray}{RGB}{149,149,149}
+
+
+% design changes
+%\setbeamertemplate{footline}[frame number]
+\setbeamercolor{title}{fg=TUILOrange}
+\setbeamercolor{author}{fg=TUILBlue}
+\setbeamercolor{frametitle}{fg=TUILOrange}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamertemplate{itemize item}{\color{TUILGreen}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{TUILGreen}$\circ$}
+\setbeamertemplate{itemize subsubitem}{\color{TUILGreen}$\triangleright$}
+\setbeamercolor{section in toc}{fg=TUILGray}
+\setbeamercolor{subsection in toc}{fg=TUILGray}
+
+\setbeamercolor{normal text}{fg=TUILBlue}
+
+\usebibitemtemplate{\insertbiblabel}
+
+\beamertemplatenavigationsymbolsempty
+
+\setbeamercovered{transparent}
+
+\usebackgroundtemplate{}
+\addtobeamertemplate{frametitle}{\vspace*{-1.4cm}}{\vspace*{0.2cm}}
+
+\usepackage{array}
+% H as hiding column
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+%\boldmath
+
+%\usepackage{helvet}
+\usepackage{lmodern} % moderne schriftart
+
+%\renewcommand\sfdefault{phv}
+%\renewcommand\familydefault{\sfdefault}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% bold- text
+%\renewcommand{\seriesdefault}{\bfdefault}
+
+\usepackage{pgfplots}
+
+\usetikzlibrary{shadows}
+\usetikzlibrary{shadings}
+
+% todo makro
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+% hide makro
+\newcommand{\None}[1]{}
+
+
+\newcommand{\xG}[1]{\textcolor{green}{#1}}
+\newcommand{\xR}[1]{\textcolor{red}{#1}}
+\newcommand{\xO}[1]{\textcolor{TUILOrange}{#1}}
+\newcommand{\xB}[1]{\textcolor{lightblue}{#1}}
+\newcommand{\xBB}[1]{\textbf{\textcolor{lightblue}{#1}}}
+\newcommand{\vitem}{\vfill\item}
+
+
+
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{tcolorbox}
+\usepackage{pgf}
+
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+
+
+\let\oldciteautor\citeauthor
+\renewcommand{\citeauthor}[1]{\textit{\oldciteautor{#1}}}
+
+% infos
+\title{\Huge Poster Title}
+\author{%
+William Menz$^1$, Rakesh Rao Ramachandra Rao$^1$, Alexander Raake$^{1,2}$, \underline{Steve Göring$^1$}\\[0.5em]
+    $^1$ Audiovisual Technology Group; Technische Universität Ilmenau, Germany;  \\
+    $^2$ Chair of Signal Processing in Communication Engineering, IENT, RWTH Aachen, Germany
+}
+\date{}
+
+%\titlegraphic{%
+%  \includegraphics[height=5.8cm]{logo.pdf}
+%}
+
+%\logo{%
+  %\pgfputat{\pgfxy(-0.3,7.3)}{\pgfbox[right,base]{\includegraphics[height=0.8cm]{logo.pdf}}}
+%}
+
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{tcolorbox}
+
+\setbeamertemplate{caption}[numbered]
+
+
+
+
+\newtcolorbox{contentblock}[1]{
+colback=white,
+colbacktitle=white,
+colframe=white,
+fonttitle=\bfseries\large,
+title=\vspace{0.4em}\color{TUILOrange}#1,  % \vspace{0.2em}
+boxrule=3pt,
+top=5mm,
+left=3mm,
+bottom=3mm,
+leftrule=5mm,
+sharp corners=south
+}
+
+
+\begin{document}
+\begin{frame}[t]{}
+    \frametitle{\title{}}
+    \begin{block}{}
+        \maketitle
+    \end{block}
+    \vspace{-3em}
+   \begin{columns}[T]
+        \begin{column}[T]{0.49\textwidth}
+            \begin{contentblock}{Introduction}
+            \begin{itemize}
+                \vitem test
+                    \begin{itemize}
+                        \vitem test \cite{menz2025head}
+                        \vitem test \cite{goetzel2026}
+                    \end{itemize}
+                \vitem \xBB{whatever}
+
+            \end{itemize}
+            \end{contentblock}
+        \end{column}
+        \hfill
+        \begin{column}[T]{0.49\textwidth}
+            \begin{contentblock}{}
+                \begin{figure}[htb!]
+                    \includegraphics[width=0.9\textwidth]{logo}
+                    \caption{Image}
+                    \label{fig:framework}
+                \end{figure}
+            \end{contentblock}
+        \end{column}
+    \end{columns}
+
+%\vspace{-1em}
+    \begin{columns}[T]
+        \begin{column}[T]{0.49\textwidth}
+            \begin{contentblock}{References}
+            {
+            \begingroup
+                %\setstretch{0.8}
+                \renewcommand{\bibfont}{\scriptsize}
+                \setlength\bibitemsep{0pt}
+                \setlength{\biblabelsep}{0pt}
+                %\sloppy
+                \printbibliography[heading=none]
+
+            \endgroup
+            }
+            \end{contentblock}
+
+        \end{column}
+        \hfill
+        \begin{column}[T]{0.49\textwidth}
+            \begin{contentblock}{Conclusion and Future Work}
+                \begin{columns}[T]
+                    \begin{column}[T]{0.65\textwidth}
+                    \begin{itemize}
+                        \vitem whatever
+                    \end{itemize}
+                    \end{column}
+                    \begin{column}[T]{0.35\textwidth}
+                        \includegraphics[height=4cm]{logo.pdf}
+                    \end{column}
+                \end{columns}
+            \end{contentblock}
+            \vspace*{-1.5em}
+            \begin{contentblock}{Acknowledgment}
+                \textcolor{TUILBlue}{\small
+                ......}
+            \end{contentblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+\end{document}
+
+
+
