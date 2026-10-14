@@ -93,7 +93,12 @@ or \todoI{inline}
 \note{small note}
 \cite[p.12]{Berlin}
 
+{
+% redefine emph to get rid of the underlining of paper titles
+\renewcommand{\emph}[1]{\textit{#1}}
+\sloppy
 \printbibliography
+}
 
 \clearpage
 
